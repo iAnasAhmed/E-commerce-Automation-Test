@@ -34,6 +34,7 @@ public class Search {
     public void userShouldHaveProductsContainsTheSearchedWord() {
         search = new pages.Search(driver);
         List<WebElement> searchedItems = search.getSearchedItems();
+        Assert.assertTrue(searchedItems.size()>0);
         Assert.assertEquals(searchedItems.get(0).getText(), "HTC One M8 Android L 5.0 Lollipop");
         Assert.assertEquals(searchedItems.get(1).getText(), "HTC One Mini Blue");
         Assert.assertTrue(driver.getCurrentUrl().contains("HTC"));
